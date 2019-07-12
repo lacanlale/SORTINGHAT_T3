@@ -1,0 +1,168 @@
+Record_id,Attribute_names,Labelled
+38,"publish_time, headline_text",True
+39,"publish_time, headline_text",True
+40,"publish_time, headline_text",True
+41,"publish_time, headline_text",True
+42,"publish_time, headline_text",True
+43,"publish_time, headline_text",True
+44,"publish_time, headline_text",True
+48,"Style, PrimingMethod, PrimingAmount, URL",True
+51,"color, age_upon_outcome, date_of_birth, datetime, monthyear, age_group, dob_monthyear",True
+52,"color, age_upon_outcome, date_of_birth, datetime, monthyear",True
+56,"publish_date, headline_text",True
+59,"film_date, published_date, description, name, ratings, related_talks, speaker_occupation, tags, title, url",True
+90,"taster_twitter_handle, description, title",True
+93,"word_score, title, review_date, best_tracks, worst_track, link",True
+33,Item,True
+34,"use, posted_time, disbursed_time, funded_time, tags, borrower_genders, date",True
+35,"LocationName, geo",True
+37,"geocode_old, LocationName, names, geo, mpi_region, mpi_geo",True
+50,"EVENT_DATE, NOTES, SOURCE",True
+53,"title, date, content",True
+54,"title, date, url, content",True
+55,"title, date, url, content",True
+60,"transcript, url",True
+62,set_num,True
+64,set_num,True
+67,set_num,True
+88,Date,True
+89,description,True
+91,"Data, Description",True
+92,Data,True
+130,"q0004_other, q0005_other, q0006_other, q0008_other, q0009_other, q0010_other, q0012_other, q0013_other, q0017_other, q0019_other, q0020_other, q0022_other, q0023_other, q0024_other, q25LangOther, q0026_other, q0027_other, q28LoveOther, q0029_other, q0030_other, q0032_other, q0035_other, StartDate, EndDate",True
+131,"q0004_other, q0005_other, q0006_other, q0008_other, q0009_other, q10Industry, q0010_other, q0012_other, q0013_other, q0017_other, q0019_other, q0020_other, q0022_other, q0023_other, q0024_other, q25LangOther, q0026_other, q0027_other, q28LoveOther, q0029_other, q0030_other, q0032_other, q0035_other, q1AgeBeginCoding, q2Age, q18NumDevelopHireWithinNextYear, q31Level3, q34IdealLengHackerRankTest, StartDate, EndDate",True
+133,"PoorWeather, PRCP, TSHDSBRSGF, Date",True
+124,"WHOIS_UPDATED_DATE, WHOIS_REGDATE",True
+114,"geocode_old, geocode, names, geo, mpi_region, mpi_geo, ADM1SALBNA, region, LocationName",True
+119,SpecialNotes,True
+122,"DateTime, Observation",True
+125,"Description, Current Status Date, Issued Date, Completed Date, First Construction Document Date, Permit Expiration Date, Location, Permit Creation Date, Filed Date",True
+126,"secondary_breed, license_issue_date, primary_breed",True
+128,"Survey Question, Notes",True
+129,Label,True
+134,"LAT, LON",True
+145,"ACTION, VIOLATION DESCRIPTION, GRADE DATE, INSPECTION DATE",True
+158,"number_available_in_stock, product_name, price, amazon_category_and_sub_category, customers_who_bought_this_item_also_bought, description, product_information, product_description, items_customers_buy_after_viewing_this_item, customer_questions_and_answers, customer_reviews, sellers",True
+162,"venue.phone, created, description, group.created, how_to_find_us, event_name, updated, venue.address_1, venue.address_2, event_url, event_time",True
+157,"magnitude, description",True
+148,"abilities, classfication",True
+169,"Review_Date, Hotel_Address, Negative_Review, Positive_Review, Tags, days_since_review",True
+147,msamd_name,True
+151,"Date, Day",True
+152,commodity_transaction,True
+156,"Cuisine Style, Price Range, Reviews, URL_TA",True
+159,posts,True
+164,"category.name, category.shortname, description, group_photo.base_url, organizer.photo.base_url, timezone, created, group_photo.highres_link, group_photo.photo_link, group_photo.thumb_link, link, organizer.photo.highres_link, organizer.photo.photo_link, organizer.photo.thumb_link, urlname",True
+166,"hometown, bio, joined, link, visited",True
+167,"description, link, topic_name",True
+168,address_1,True
+150,date,True
+149,date,True
+172,Word,True
+174,"Landmark, Address, APPDate",True
+190,"Location, Date, Time",True
+193,"workTitle, movement, soloists",True
+197,"Question, GeoLocation",True
+173,"Address, Landmark, APPDate",True
+175,"Address, Landmark, APPDate",True
+176,"Address, Landmark, APPDate",True
+177,"Address, Landmark, APPDate",True
+178,"Report Date, Report Time, Address",True
+179,"Report Date, Report Time, Address",True
+180,"Report Date, Report Time, Address",True
+181,"Report Date, Report Time, Address",True
+182,"Report Date, Report Time, Address",True
+183,"Report Date, Report Time, Address",True
+184,"Report Date, Report Time, Address",True
+185,"Report Date, Report Time, Address",True
+186,"Report Date, Report Time, Address",True
+187,"Report Date, Report Time, Address",True
+191,"Date, Location, Time, workTitle",True
+194,DateTime,True
+195,DateTime,True
+196,"Description, Location, Name",True
+198,"case_received_date, decision_date, employer_address_1, employer_address_2, foreign_worker_info_education_other, fw_info_education_other, job_info_alt_combo_ed_other, job_info_alt_field_name, job_info_education_other, job_info_training_field, orig_file_date, pw_determ_date, pw_expire_date, recr_info_first_ad_start, recr_info_job_fair_from, recr_info_job_fair_to, recr_info_on_campus_recr_from, recr_info_on_campus_recr_to, recr_info_pro_org_advert_from, recr_info_pro_org_advert_to, recr_info_prof_org_advert_from, recr_info_prof_org_advert_to, recr_info_radio_tv_ad_from, recr_info_radio_tv_ad_to, recr_info_second_ad_start, recr_info_swa_job_order_end, recr_info_swa_job_order_start, ri_campus_placement_from, ri_campus_placement_to, ri_coll_teach_pro_jnl, ri_coll_teach_select_date, ri_employee_referral_prog_from, ri_employee_referral_prog_to, ri_employer_web_post_from, ri_employer_web_post_to, ri_job_search_website_from, ri_job_search_website_to, ri_local_ethnic_paper_from, ri_local_ethnic_paper_to, ri_pvt_employment_firm_from, ri_pvt_employment_firm_to",True
+201,url,True
+203,"dob, url",True
+205,time,True
+206,"time, duration",True
+207,"q1, q2, q3",True
+208,"date, time, url",True
+209,"time, fastestLapTime",True
+210,url,True
+212,"r.valid_until, r.start_date, r.end_date",True
+213,"n.valid_until, n.address, n.name",True
+214,"n.valid_until, n.address, n.name, n.closed_date, n.incorporation_date",True
+215,n.valid_until,True
+216,"n.valid_until, n.name, n.note",True
+217,n.name,True
+218,"INTERSECTION, ADDRESS, VIOLATION DATE",True
+222,DESCRIPTION,True
+223,"Special Notes, National accounts base year, Alternative conversion factor, Latest household survey",True
+224,Indicator Name,True
+225,DESCRIPTION,True
+226,DESCRIPTION,True
+227,"Topic, Short definition, Long definition, Limitations and exceptions, Notes from original source, General comments, Source, Statistical concept and methodology, Development relevance",True
+233,"timestamp, authorUserAgent, url, title, text",True
+234,"timestamp, userAgent",True
+235,"callDateTime, description, location",True
+239,"created_at, tweet",True
+240,checkin_date,True
+244,date,True
+245,"cat_desc, dt_desc, et_desc, geo_desc, report",True
+247,newick,True
+248,IncorporationDate,True
+250,"Ticket Created, Date of Issue, Time of Issue, Location (Center point of the Zip Code)",True
+251,"As of Date, Contract Description, Contract Signing Date, Total Contract Amount (USD)",True
+254,desc,True
+255,"name, desc",True
+257,Language;Country,True
+260,"time, question",True
+261,"date_added, job_description, location, page_url, salary, sector",True
+263,original_air_date,True
+266,"job_description, job_requirements, post_date, salary_offered",True
+267,"issue_title, description",True
+268,"owner, issue_title, description",True
+269,"owner, issue_title, description",True
+270,"owner, issue_title, description",True
+271,"issue_title, reported_time, owner, description",True
+273,Date,True
+275,Address,True
+276,Description,True
+277,install_size_kw_buckets_json,True
+278,install_size_kw_buckets_json,True
+279,install_size_kw_buckets_json,True
+280,install_size_kw_buckets_json,True
+282,"Address, Date",True
+284,date,True
+285,Period Ending,True
+286,date,True
+287,date,True
+288,"Address of Headquarters, Date first added",True
+291,"address, plant_date, plot_size, site_info, species",True
+293,"ICO, STREET",True
+294,"ICO, STREET",True
+295,"ICO, STREET",True
+296,"ICO, STREET",True
+297,"ICO, STREET",True
+298,"ICO, STREET",True
+301,"EXON, INTRON, Amino_acids, Codons",True
+304,Date Time,True
+309,value,True
+311,"item, value",True
+313,value,True
+314,item,True
+317,"sna93_table_code, currency, fiscal_year_type",True
+318,"sna93_table_code, item, currency, fiscal_year_type",True
+319,"sna93_table_code, fiscal_year_type, value",True
+320,"sna93_table_code, fiscal_year_type, value",True
+321,"item, fiscal_year_type",True
+322,"sna93_table_code, sub_item, sub_group, item, fiscal_year_type, value",True
+323,"sna93_table_code, fiscal_year_type",True
+324,fiscal_year_type,True
+325,"sna93_table_code, item",True
+326,"sna93_table_code, fiscal_year_type",True
+327,"sna93_table_code, item, fiscal_year_type",True
+328,"sna93_table_code, sub_group, fiscal_year_type, value",True
+329,location,True
+350,"s1p1c6plant, s1p1c6harv, s1p2c1plant, s1p2c1harv, reason, season3e, season3s, reason1, reason2, reason3, reason4, reason5, reason9",True
