@@ -17,12 +17,13 @@ labelled_df = pd.read_csv('data/needs_extraction_data/date_and_time_combined.csv
 vocab = ['Datetime', 'List', 'Numbers', 'Sentence', 'URL', 'Custom Object', 'Unusable']
 count = 1
 index = -1
-while not(index >= 0 and index < len(vocab)):
+while not(index >= 1 and index <= len(vocab)):
     print('[Enter number of item to preview]')
     for cat in vocab:
         print(f'{count}.) {cat}')
         count += 1
     index = int(input('Option #: '))
+    count = 0
 pref = vocab[index-1]
 
 labelled_cut = labelled_df.loc[labelled_df.y_act == pref][['Record_id', 'Attribute_name', 'sample_1', 'sample_2', 'sample_3', 'sample_4', 'sample_5']]
@@ -34,4 +35,5 @@ for tup in labelled_cut.itertuples():
     print('- ', tup.sample_3)
     print('- ', tup.sample_4)
     print('- ', tup.sample_5)
+    print()
     time.sleep(1)
