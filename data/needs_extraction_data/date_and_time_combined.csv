@@ -1,4 +1,4 @@
-Record_id,Attribute_name,y_pred,y_act,Reason,total_vals,num_nans,%_nans,mean_word_count,std_dev_word_count,has_delimeters,sample_1,sample_2,sample_3,sample_4,sample_5
+Record_id,Attribute_name,y_pred,y_act,Reason,total_vals,num_nans,%_nans,mean_word_count,std_dev_word_count,has_delimiters,sample_1,sample_2,sample_3,sample_4,sample_5
 38,publish_time,,Datetime,c,1111505,0,0.0,1.0,0.0,False,201107220633,201109071206,201108081024,201106150200,201111220503
 38,headline_text,,Sentence,g,1111505,3,2.6990431891894323e-06,10.143410061133329,3.9062782088213592,True,Schwab Launches Consultative Program to Help Advisors Manage Profitability Through Client Segmentation,DIARY-S&P 500 EARNINGS FOR WEDNESDAY MARCH 30;2011,REG - Dialight PLC - Holding(s) in Company,IFR Preview-major US economic data for release June 24,REG-Small Co. Div. Tst - Net Asset Value(s)
 39,publish_time,,Datetime,c,1035896,0,0.0,1.0,0.0,False,201209241015,201203131601,201202081212,201201092356,201208241123
@@ -442,7 +442,7 @@ Record_id,Attribute_name,y_pred,y_act,Reason,total_vals,num_nans,%_nans,mean_wor
 208,date,,Datetime,c,997,0,0.0,1.0,0.0,False,2010-10-24,1982-06-13,1971-07-04,2008-11-02,1985-06-16
 208,time,,Datetime,e,997,731,0.7331995987963892,1.0,0.0,False,,12:00:00,,,
 208,url,,URL,h,997,0,0.0,1.0,0.0,False,http://en.wikipedia.org/wiki/1968_Mexican_Grand_Prix,http://en.wikipedia.org/wiki/1998_Argentine_Grand_Prix,http://en.wikipedia.org/wiki/1953_Belgian_Grand_Prix,http://en.wikipedia.org/wiki/1973_United_States_Grand_Prix,http://en.wikipedia.org/wiki/2012_Korean_Grand_Prix
-209,time,,Datetime,e,23777,17773,0.7474870673339782,1.0000841149009547,0.009171031874229938,False,,,,45.936,
+209,time,,Numbers,e,23777,17773,0.7474870673339782,1.0000841149009547,0.009171031874229938,False,,,,45.936,
 209,fastestLapTime,,Datetime,e,23777,18394,0.7736047440804138,1.0,0.0,False,01:16.0,,,,01:38.9
 210,url,,URL,h,69,0,0.0,1.0,0.0,False,http://en.wikipedia.org/wiki/1951_Formula_One_season,http://en.wikipedia.org/wiki/2011_Formula_One_season,http://en.wikipedia.org/wiki/1971_Formula_One_season,http://en.wikipedia.org/wiki/1992_Formula_One_season,http://en.wikipedia.org/wiki/1977_Formula_One_season
 212,r.valid_until,,Sentence,g,364456,0,0.0,6.001338981934719,0.051731721378828886,False,Appleby data is current through 2014,Appleby data is current through 2014,Appleby data is current through 2014,Appleby data is current through 2014,Appleby data is current through 2014
@@ -466,7 +466,7 @@ Record_id,Attribute_name,y_pred,y_act,Reason,total_vals,num_nans,%_nans,mean_wor
 218,VIOLATION DATE,,Datetime,c,310579,0,0.0,1.0,0.0,False,04/18/2015,02/08/2015,11/02/2016,09/16/2016,03/01/2016
 222,DESCRIPTION,,Sentence,g,6285,0,0.0,14.755449482895784,14.302667195977394,False,Data source : United Nations World Population Prospects,Excludes South Sudan,Data sources : Institute of Statistics and Economic Studies,Comisión Nacional de Telecomunicaciones (CONATEL).,"Data sources : United Nations Population and Vital Statistics Report, Sample Registration System, United Nations World Population Prospects"
 223,Special Notes,,Sentence,g,263,113,0.4296577946768061,15.03041825095057,23.25554487655954,False,,,Early-dividend countries are mostly lower-middle-income countries further along the fertility transition. Fertility rates have fallen below four births per woman and the working-age share of the population is likely rising considerably.,,Fiscal year end: June 30; reporting period for national accounts data: CY.
-223,National accounts base year,,Unusable,m,263,58,0.22053231939163487,2.159695817490494,2.514817514613655,False,Original chained constant price data are rescaled.,2013,2009,,2005
+223,National accounts base year,,Datetime,m,263,58,0.22053231939163487,2.159695817490494,2.514817514613655,False,Original chained constant price data are rescaled.,2013,2009,,2005
 223,Alternative conversion factor,,Unusable,m,263,216,0.8212927756653993,1.0228136882129275,0.14930915525529928,False,,,,,1993
 223,Latest household survey,,Sentence,g,263,111,0.4220532319391635,3.3536121673003803,2.1836882920440206,False,,"Multiple Indicator Cluster Survey, 2011",Multiple Indicator Cluster Survey 2014/15,"National Sample Survey on Population Changes, 2014","Multiple Indicator Cluster Survey, 2013/14"
 224,Indicator Name,,Custom Object,l,401016,0,0.0,8.222514812376563,2.973969800596988,False,"Trained teachers in upper secondary education, female (% of female teachers)","Child employment in services, male (% of male economically active children ages 7-14)",Benefit incidence of social safety net programs to poorest quintile (% of total safety net benefits),"Manufacturing, value added (annual % growth)",Renewable internal freshwater resources per capita (cubic meters)
