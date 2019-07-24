@@ -4,10 +4,10 @@ import numpy as np
 import re
 
 
-def is_url(row, reg):
+def is_url(row, reg, pat):
     samples = row[6:]
     for sample in samples:
-        if reg.match(str(sample)):
+        if reg.match(str(sample).strip()) and len(re.sub(pat, '', str(sample).strip())) == 0:
             return True
     return False
 
@@ -62,10 +62,10 @@ identifiers = df[['num_nans', '%_nans', 'mean_word_count',
 
 rulebook_preds = []
 
-url_pat = r"^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$"
+url_pat = r"(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?"
 url_reg = re.compile(url_pat)
 
-list_pat =  r"((.?)+[,>;:\-~`\.\|\*\_]\s+(.?)+){2,}"
+list_pat =  r"((\d|\w|\')+(,|>|;|:|\-|`\.|\||\*){1}\s?(\d|\w|\')+){2,}"
 list_reg = re.compile(list_pat)
 
 num_pat = r"([\$|\w]?(\d|\d\.\d|\d\,\d)+\s?[\$|\w]?)"
@@ -79,24 +79,13 @@ for row in identifiers.itertuples():
         # print('UNUSABLE')
         rulebook_preds.append('Unusable')
         continue
-    elif is_url(row, url_reg):
+    elif is_url(row, url_reg, url_pat):
         # print('URL')
         rulebook_preds.append('URL')
         continue
     elif is_datetime(row):
         # print('DATETIME')
         rulebook_preds.append('Datetime')
-        continue
-    elif row.has_delimiters == 'True':
-        if is_list(row, list_reg):
-            # print('LIST')
-            rulebook_preds.append('List', list_reg)
-            continue
-        else:
-            rulebook_preds.append('')
-    elif is_email(row, email_reg):
-        # print('CUSTOM OBJECT')
-        rulebook_preds.append('Custom Object')
         continue
     elif row.mean_word_count < 2.0:
         if is_num(row, num_reg):
@@ -105,6 +94,17 @@ for row in identifiers.itertuples():
             continue
         else:
             rulebook_preds.append('')
+    elif row.has_delimiters == True:
+        if is_list(row, list_reg):
+            # print('LIST')
+            rulebook_preds.append('List')
+            continue
+        else:
+            rulebook_preds.append('')
+    elif is_email(row, email_reg):
+        # print('CUSTOM OBJECT')
+        rulebook_preds.append('Custom Object')
+        continue
     else:
         # Unable to identify, do NOT fill in y_act
         # print('DEFAULT')
