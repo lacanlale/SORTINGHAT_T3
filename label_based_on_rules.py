@@ -27,14 +27,6 @@ def is_datetime(row):
     return False
 
 
-def is_list(row, reg):
-    samples = row[6:]
-    for sample in samples:
-        if reg.match(str(sample).lower()):
-            return True
-    return False
-
-
 def is_email(row, reg):
     samples = row[6:]
     for sample in samples:
@@ -75,41 +67,26 @@ email_pat = r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b"
 email_reg = re.compile(email_pat)
 
 for row in identifiers.itertuples():
-    if float(row.perc_nans) > 0.90:
-        # print('UNUSABLE')
-        rulebook_preds.append('Unusable')
-        continue
+    if float(row.perc_nans) >= 0.90:
+        rulebook_preds.append('Custom Object')
     elif row.mean_word_count <= 2.0:
-        if is_num(row, num_reg):
-            if is_datetime(row):
-                rulebook_preds.append('Datetime')
-            else:
-                # print('NUMBERS')
-                rulebook_preds.append('Numbers')
-            continue
+        if is_datetime(row):
+            rulebook_preds.append('Datetime')
+        elif is_email(row, email_reg):
+            rulebook_preds.append('Custom Object')
+        elif is_num(row, num_reg):
+            rulebook_preds.append('Numbers')
+        elif is_url(row, url_reg, url_pat):
+            rulebook_preds.append('URL')
         else:
-            if is_url(row, url_reg, url_pat):
-                # print('URL')
-                rulebook_preds.append('URL')
-                continue
-                
-    if row.has_delims == True:
-        rulebook_preds.append('Sentence')
-    elif row.has_delimiters == True:
-        if is_list(row, list_reg):
-            # print('LIST')
+            rulebook_preds.append('')
+    elif row.std_dev_word_count < 10.0:
+        if row.has_delimiters == True:
             rulebook_preds.append('List')
-            continue
         else:
             rulebook_preds.append('Custom Object')
-    elif is_email(row, email_reg):
-        # print('CUSTOM OBJECT')
-        rulebook_preds.append('Custom Object')
-        continue
     else:
-        # Unable to identify, do NOT fill in y_act
-        # print('DEFAULT')
-        rulebook_preds.append('')
+        rulebook_preds.append('Sentence')
 
 df['y_pred'] = rulebook_preds 
 df.to_csv('data/needs_extraction_data/rulebook_labelled.csv', index=False)
