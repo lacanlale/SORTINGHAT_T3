@@ -26,9 +26,13 @@ def get_csv(r_id):
 
 
 def get_vals(r_id, attr_name):
-        path = f"{dataset_path}{get_csv(r_id)}"
+        csv_name = get_csv(r_id)
+        path = f"{dataset_path}{csv_name}"
         print("Reading path: ", path)
-        df = pd.read_csv(f'{dataset_path}{get_csv(r_id)}')
+        try:
+                df = pd.read_csv(f"{dataset_path}{csv_name}", encoding='utf-8').dropna().drop_duplicates(subset=[attr_name])
+        except UnicodeDecodeError:
+                df = pd.read_csv(f"{dataset_path}{csv_name}", encoding='ISO-8859-1').dropna().drop_duplicates(subset=[attr_name])
         nan_total = len(df) - df[attr_name].count() # Total NaN's
         perc_nan = nan_total/len(df) # % of NaN's
         has_delim = False
@@ -40,7 +44,7 @@ def get_vals(r_id, attr_name):
                 totals.append(len(str(value).split(' '))) 
                 if not has_delim and del_reg.match(str(value)):
                         has_delim = True
-                print(f"\t - Processed {count}/{length} items || {(count/length)*100}% finished")
+                print(f"\t - Processed {count}/{length} items || {'{0:.3g}'.format((count/length)*100)}% finished")
 
         vals = [np.mean(totals), np.std(totals), has_delim, nan_total, perc_nan]
         return vals
