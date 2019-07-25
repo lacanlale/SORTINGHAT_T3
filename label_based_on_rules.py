@@ -47,7 +47,7 @@ def is_num(row, reg):
     return False
 
     
-df = pd.read_csv("data/needs_extraction_data/date_and_time_combined.csv")
+df = pd.read_csv("data/needs_extraction_data/labelled_data.csv")
 identifiers = df[['num_nans', '%_nans', 'mean_word_count',
        'std_dev_word_count', 'has_delimiters', 'sample_1', 'sample_2',
        'sample_3', 'sample_4', 'sample_5']].rename(columns={'%_nans' : 'perc_nans'}).fillna('NANVAL!')
@@ -69,7 +69,7 @@ email_reg = re.compile(email_pat)
 for row in identifiers.itertuples():
     if float(row.perc_nans) >= 0.90:
         rulebook_preds.append('Custom Object')
-    elif row.mean_word_count <= 2.0:
+    elif float(row.mean_word_count) <= 2.0:
         if is_datetime(row):
             rulebook_preds.append('Datetime')
         elif is_email(row, email_reg):
@@ -80,7 +80,7 @@ for row in identifiers.itertuples():
             rulebook_preds.append('URL')
         else:
             rulebook_preds.append('')
-    elif row.std_dev_word_count < 10.0:
+    elif float(row.std_dev_word_count) < 10.0:
         if row.has_delimiters == True:
             rulebook_preds.append('List')
         else:
