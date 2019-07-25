@@ -35,7 +35,7 @@ def get_std_dev_word_count(df):
 
 
 def check_delim(df):
-    regex = r'([\w\d](:|,|;|\/|-|~|\||_)[\w\d])+'
+    regex = r'((\d|\w|\')+(,|>|;|:|\-|`\.|\||\*){1}\s?(\d|\w|\')+){2,}'
     pattern = re.compile(regex)
     for entry in df:
         if pattern.match(str(entry)):

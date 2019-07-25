@@ -79,28 +79,29 @@ for row in identifiers.itertuples():
         # print('UNUSABLE')
         rulebook_preds.append('Unusable')
         continue
-    elif is_url(row, url_reg, url_pat):
-        # print('URL')
-        rulebook_preds.append('URL')
-        continue
-    elif is_datetime(row):
-        # print('DATETIME')
-        rulebook_preds.append('Datetime')
-        continue
-    elif row.mean_word_count < 2.0:
+    elif row.mean_word_count <= 2.0:
         if is_num(row, num_reg):
-            # print('NUMBERS')
-            rulebook_preds.append('Numbers')
+            if is_datetime(row):
+                rulebook_preds.append('Datetime')
+            else:
+                # print('NUMBERS')
+                rulebook_preds.append('Numbers')
             continue
         else:
-            rulebook_preds.append('')
+            if is_url(row, url_reg, url_pat):
+                # print('URL')
+                rulebook_preds.append('URL')
+                continue
+                
+    if row.has_delims == True:
+        rulebook_preds.append('Sentence')
     elif row.has_delimiters == True:
         if is_list(row, list_reg):
             # print('LIST')
             rulebook_preds.append('List')
             continue
         else:
-            rulebook_preds.append('')
+            rulebook_preds.append('Custom Object')
     elif is_email(row, email_reg):
         # print('CUSTOM OBJECT')
         rulebook_preds.append('Custom Object')
