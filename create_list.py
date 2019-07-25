@@ -1,4 +1,6 @@
 import pandas as pd
+import numpy as np
+import re
 import os
 
 # Short python script file for compiling list of data that needs extraction
@@ -10,6 +12,40 @@ import os
 cond = "Usable with extraction"
 beg = f"data/data_for_labelling"
 end = ".xlsx"
+extraction_path = "data/needs_extraction_data/"
+meta_path = "data/data_set/meta_data/meta_data.csv"
+dataset_path = "data/data_set/dataset/"
+meta_df = pd.read_csv(f"{meta_path}")
+
+del_pattern = r'((\d|\w|\')+(,|>|;|:|\-|`\.|\||\*){1}\s?(\d|\w|\')+){2,}'
+del_reg = re.compile(del_pattern)
+
+
+def get_csv(r_id):
+    return meta_df.loc[meta_df.Record_id == r_id].name.iloc[0]
+
+
+def get_vals(r_id, attr_name):
+        path = f"{dataset_path}{get_csv(r_id)}"
+        print("Reading path: ", path)
+        df = pd.read_csv(f'{dataset_path}{get_csv(r_id)}')
+        nan_total = len(df) - df[attr_name].count() # Total NaN's
+        perc_nan = nan_total/len(df) # % of NaN's
+        has_delim = False
+        totals = []
+        count = 0
+        length = len(df)
+        for value in df[attr_name]:
+                count += 1
+                totals.append(len(str(value).split(' '))) 
+                if not has_delim and del_reg.match(str(value)):
+                        has_delim = True
+                print(f"\t - Processed {count}/{length} items || {(count/length)*100}% finished")
+
+        vals = [np.mean(totals), np.std(totals), has_delim, nan_total, perc_nan]
+        return vals
+
+
 
 folder_path = "data/needs_extraction_data/"
 if not os.path.exists(folder_path):
@@ -34,22 +70,34 @@ for x in range(0,10):
     else:
         needs_extr = df_sub
 
-# Create CSV of Record_id's and Attribute_name's from needs_extraction csv
-record_ids = needs_extr.Record_id.drop_duplicates()
-record_dict = {}
-for r_id in record_ids:
-        record_dict[r_id] = []
-        r_data = needs_extr.loc[needs_extr.Record_id == r_id]
-        attr_names = r_data.Attribute_name
-        for attr in attr_names:
-                record_dict[r_id].append(attr)
-        record_dict[r_id] = ', '.join(record_dict[r_id])
+needs_extr.drop(['% nans','Check','Unnamed: 2','Unnamed: 9','check','max_val','mean','min_val','Num of nans','num of dist_val','reason','Reason','std_dev','y_Arun','y_act','y_pred'], axis=1, inplace=True)
 
-r_id_df = pd.Series(record_dict, name='Attribute_names')
-r_id_df.index.name = 'Record_id'
-r_id_df.reset_index()
-r_id_df = pd.DataFrame({'Record_id':r_id_df.index, 'Attribute_names':r_id_df.values})
-r_id_df['Labelled'] = False
-
+print()
+r_ids = needs_extr[['Record_id', 'Attribute_name']]
+sig_vals = {
+        'mean_token_count' : [],
+        'stdev_token_count' : [],
+        'has_delims' : [],
+        'num_nans' : [],
+        '%_nans' : []
+}
+count = 0
+length = len(needs_extr)
+for row in r_ids.itertuples():
+       r_id = row[1] 
+       attr_name = row[2]
+       count += 1
+       print(f"Item {count}/{length} [Record_id: {r_id} || Attribute: {attr_name}]")
+       vals = get_vals(r_id, attr_name)
+       sig_vals['mean_token_count'].append(vals[0])
+       sig_vals['stdev_token_count'].append(vals[1])
+       sig_vals['has_delims'].append(vals[2])
+       sig_vals['num_nans'].append(vals[3])
+       sig_vals['%_nans'].append(vals[4])
+        
+needs_extr['%_nans'] = sig_vals['%_nans']
+needs_extr['num_nans'] = sig_vals['num_nans']
+needs_extr['has_delims'] = sig_vals['has_delims']
+needs_extr['stdev_token_count'] = sig_vals['stdev_token_count']
+needs_extr['mean_token_count'] = sig_vals['mean_token_count']
 needs_extr.to_csv(f"{folder_path}/needs_extraction.csv", index=False)
-r_id_df.to_csv(f"{folder_path}/record_ids.csv", index=False)
