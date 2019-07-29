@@ -74,12 +74,12 @@ for row in identifiers.itertuples():
             rulebook_preds.append('Datetime')
         elif is_email(row, email_reg):
             rulebook_preds.append('Custom Object')
-        elif is_num(row, num_reg):
-            rulebook_preds.append('Numbers')
         elif is_url(row, url_reg, url_pat):
             rulebook_preds.append('URL')
+        elif is_num(row, num_reg):
+            rulebook_preds.append('Numbers')
         else:
-            rulebook_preds.append('')
+            rulebook_preds.append('Custom Object')
     elif float(row.std_dev_word_count) < 10.0:
         if row.has_delimiters == True:
             rulebook_preds.append('List')
