@@ -1,0 +1,21 @@
+Record_id,Attribute_name,y_pred,y_act,Reason,total_vals,num_nans,%_nans,mean_word_count,std_dev_word_count,has_delimiters,sample_1,sample_2,sample_3,sample_4,sample_5
+51,age_upon_outcome,string,Numbers,a,29421,0,0.0,2.0,0.0,False,3 months,6 months,3 weeks,2 years,2 years
+52,age_upon_outcome,mixed,Numbers,a,78256,8,0.00010222858311183808,1.999897771416888,0.010110298335293227,False,1 year,8 months,3 months,6 years,1 year
+62,set_num,string,Numbers,a,11681,0,0.0,1.0,0.0,True,7699-1,6673-1,41589-1,5002467-1,5004752-1
+64,set_num,string,Numbers,a,2846,0,0.0,1.0,0.0,False,71007-8,4349-1,7575-17,6242-1,7724-8
+67,set_num,string,Numbers,a,11673,0,0.0,1.0,0.0,True,21206-1,383-2,5062-1,5072-1,42028-1
+131,q1AgeBeginCoding,string,Numbers,a,25090,0,0.0,4.994898365882822,0.13936984394436328,False,11 - 15 years old,16 - 20 years old,11 - 15 years old,11 - 15 years old,16 - 20 years old
+131,q2Age,string,Numbers,a,25090,0,0.0,4.992626544440017,0.16409903671561432,False,25 - 34 years old,25 - 34 years old,12 - 18 years old,25 - 34 years old,18 - 24 years old
+133,PRCP,mixed,Numbers,a,119040,1932,0.016229838709677414,1.0,0.0,False,0.6,0.23,0,0.08,
+133,TSHDSBRSGF,mixed,Numbers,a,119040,84803,0.7123907930107527,1.0205561155913978,0.29748468359229546,False,,,1,,
+134,LAT,string,Numbers,a,161,0,0.0,1.0,0.0,False,0843N,3022N,2729N,5806N,3335N
+134,LON,string,Numbers,a,161,0,0.0,1.0,0.0,False,08150E,05123E,14713E,14659E,06113W
+158,number_available_in_stock,mixed,Numbers,a,10000,2500,0.25,1.0,0.0,False,5 new,10 new,2 new,,11 new
+158,price,mixed,Numbers,a,10000,1435,0.1435,1.0036,0.08477641181366427,False,£19.99,£33.41,£11.11,£24.95,£4.50
+169,days_since_review,string,Numbers,a,515738,0,0.0,2.0,0.0,False,368 day,610 day,485 day,408 day,396 day
+206,duration,string,Numbers,a,6251,0,0.0,1.0,0.0,True,30.178,21.806,23.845,32.766,25.550
+209,time,mixed,Numbers,e,23777,17773,0.7474870673339782,1.0000841149009547,0.009171031874229938,False,,,,45.936,
+251,Total Contract Amount (USD),mixed,Numbers,a,151623,413,0.002723861155629423,1.0,0.0,False,$62329.80,$1174623.00,$176481.00,$35291.16,$62488.54
+266,salary_offered,string,Numbers,a,50000,0,0.0,6.36914,1.5193273710428572,False," £35,000 - £40,000 per annum "," £26,660 - £43,000 per annum "," £15,318 per annum "," £25,000 - £27,000 per annum "," £20,000 - £25,000 per annum, pro-rata, inc benefits "
+291,plot_size,mixed,Numbers,a,188462,49438,0.262323439207904,1.4519425666712649,0.4977490898186631,True,3X3,3x3,Width 4ft,Width 3ft,Width 3ft
+301,EXON,mixed,Numbers,a,65188,8893,0.13642081364668346,1.0,0.0,True,6/15,2/2,7/36,3/3,23/63

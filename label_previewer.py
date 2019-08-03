@@ -12,9 +12,9 @@ def get_origin_csv(record_id):
     return meta_df.loc[meta_df.Record_id == record_id].name.iloc[0]
 
 meta_df = pd.read_csv('data/meta_data.csv')
-labelled_df = pd.read_csv('data/needs_extraction_data/date_and_time_combined.csv')
+labelled_df = pd.read_csv('data/needs_extraction_data/labelled_data.csv')
 
-vocab = ['Datetime', 'List', 'Numbers', 'Sentence', 'URL', 'Custom Object', 'Unusable']
+vocab = ['Datetime', 'List', 'Numbers', 'Sentence', 'URL', 'Custom Object']
 count = 1
 index = -1
 while not(index >= 1 and index <= len(vocab)):
