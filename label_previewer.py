@@ -6,6 +6,7 @@ import time
 # The following was written to help preview sample data points per category
 # alongside their respective attribute name and recoreded csv. This was written ~2 weeks
 # after labelling and was made for taking note of examples and possibly odd data.
+# It is not essential to the labelling process and is primarily used for retrieving examples.
 # --------------------------------------------------------------------------------------
 
 def get_origin_csv(record_id):

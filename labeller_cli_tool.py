@@ -1,11 +1,18 @@
 import pandas as pd
 import numpy as np
 
+# The following is a cli script to help the user interface and manually label the data
+# The flow of the tool is as follows:
+#   1.) The tool presents meaningful feautres [desc stats, column name, random samples]
+#   2.) User label
+#   3.) User enters reason for being part of that label
+#   4.) Results get recorded in labelled_data.csv
+
 def get_actual():
-    categories = ['Numbers', 'List', 'Date', 'Timestamp', 'Sentence', 'URL', 'Custom Object', 'Unusuable']
+    categories = ['Numbers', 'List', 'Datetime', 'Sentence', 'URL', 'Custom Object']
     count = 1
     choice = 0
-    while not(choice >= 1 and choice <= 8):
+    while not(choice >= 1 and choice <= 6):
         choice = 0
         for category in categories:
             print(f"{count}.) {category}")
