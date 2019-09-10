@@ -3,12 +3,16 @@ import numpy as np
 import re
 import os
 
+# NOTE
+# --------------------------------------------------------------------------------------
 # Short python script file for compiling list of data that needs extraction
 # After execution, two files will be made:
 #       1. CSV that holds data collected from the data_for_labelling#.xlsx files [columns included]
 #       2. CSV that holds Record_id's and Attribute_name's that needed extraction
 # And one folder:
 #       1. Holds copies of the data that requires extraction
+# --------------------------------------------------------------------------------------
+
 cond = "Usable with extraction"
 beg = f"data/data_for_labelling"
 end = ".xlsx"

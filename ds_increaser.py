@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import re
 
-# NOTE
+# NOTE STILL A WORK IN PROGESS//UNFINISHED
 # -----------------------------------------------------------------------------------------------------
 # The following was written AUG12,2019 to help with increasing data set size and add potential features.
 # User should know what columns they want labelled, which label to use, and which reason
