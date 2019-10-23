@@ -3,7 +3,12 @@ import pandas as pd
 import numpy as np
 import re
 
-
+# NOTE
+# --------------------------------------------------------------------------------------
+# The following is written for our rule-based approach.
+# Rules and order of steps is found in /charts/API_flowchart.png
+# or in ModelComparisons notebook.
+# --------------------------------------------------------------------------------------
 def is_url(row, reg, pat):
     samples = row[6:]
     for sample in samples:
